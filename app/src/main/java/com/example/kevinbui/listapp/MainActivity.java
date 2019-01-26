@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
-                Intent showDetailActivity = new Intent(getApplicationContext(), DetailActivity.class);
+                Intent showDetailActivity =
+                        new Intent(getApplicationContext(), DetailActivity.class);
                 showDetailActivity.putExtra("com.example.kevinbui.listapp.ITEM_INDEX", i);
                 startActivity(showDetailActivity);
 
