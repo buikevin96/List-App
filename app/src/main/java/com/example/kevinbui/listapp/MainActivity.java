@@ -1,8 +1,11 @@
 package com.example.kevinbui.listapp;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -27,5 +30,15 @@ public class MainActivity extends AppCompatActivity {
         // Itemadapater merge 3 files into layout file
         ItemAdapter itemAdapter = new ItemAdapter(this, items, prices, descriptions); // Only referencing
         myListView.setAdapter(itemAdapter); // Use the reference
+
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
+                Intent showDetailActivity = new Intent(getApplicationContext(), DetailActivity.class);
+                showDetailActivity.putExtra("com.example.kevinbui.listapp.ITEM_INDEX", i);
+                startActivity(showDetailActivity);
+
+            }
+        });
     }
 }
