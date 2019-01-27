@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">List App</string>
-    
+
     <string-array name="items">
         <item>peach</item>
         <item>tomato</item>
@@ -19,5 +19,5 @@
         <item>Fresh yellow squash from California</item>
     </string-array>
 
-    
+
 </resources>
