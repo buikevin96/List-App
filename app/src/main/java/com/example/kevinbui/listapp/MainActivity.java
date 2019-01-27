@@ -8,8 +8,7 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
-    // Reference to listview in layout file
-    ListView myListView;
+    ListView myListView; // Reference to listview in layout file
     String[] items;
     String[] prices;
     String[] descriptions;
@@ -22,10 +21,14 @@ public class MainActivity extends AppCompatActivity {
         // Reference to resources
         Resources res = getResources();
         myListView = (ListView)findViewById(R.id.myListView);// Initialize
+
+        // Reference to  arrays
         items = res.getStringArray(R.array.items);
+        prices = res.getStringArray(R.array.prices);
+        descriptions = res.getStringArray(R.array.descriptions);
 
-        // Adapter to merge items together
-        myListView.setAdapter(new ArrayAdapter<String>(this, R.layout.my_listview_detail, items));
-
+        // To use new adapter, create reference to it
+        ItemAdapter itemAdapter = new ItemAdapter(this, items, prices, descriptions);
+        myListView.setAdapter(itemAdapter);
     }
 }
